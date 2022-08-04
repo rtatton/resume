@@ -1,5 +1,7 @@
 # Source: https://github.com/github/gitignore/blob/main/TeX.gitignore
 
+.DS_Store
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
