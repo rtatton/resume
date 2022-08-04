@@ -1,0 +1,68 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[none]{hyphenat}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{xparse}
+\geometry{letterpaper, margin=0.25in}
+\linespread{0.93}
+\setlist{leftmargin=6mm}
+\setlist{rightmargin=6mm}
+\renewcommand\labelitemi{{\boldmath$\cdot$}}
+
+\NewDocumentEnvironment{rsection}{mO{-0.3in}}{
+	\section*{\Large{\sc{#1}}}
+	\vspace{-0.3in}
+	\noindent\rule{\textwidth}{0.4pt}
+}{
+	\vspace{#2}
+}
+
+\NewDocumentEnvironment{ritem}{mO{}O{}O{}}{
+	% Top: {title}[location]
+	% Bottom: [short description][timeframe]
+	\begin{tabularx}{\textwidth}{X r}
+		\textbf{#1} & \textbf{#2} \\[-2pt]
+		\textit{\small#3} & \textit{\small#4}
+	\end{tabularx}
+	\vspace{-0.15in}
+	\begin{normalsize}
+}{
+	\end{normalsize}
+}
+
+\NewDocumentEnvironment{ritemize}{mO{}O{}O{}}{
+	\begin{ritem}{#1}[#2][#3][#4]
+	\begin{itemize}[noitemsep]
+}{
+	\end{itemize}
+	\end{ritem}
+}
+
+\begin{document}
+\pagenumbering{gobble}
+\input{headers/header}
+\input{objectives/objective}
+\input{educations/education}
+\begin{rsection}{Work Experience}
+\newcommand{\rinput}[1]{\input{experiences/#1}}
+\rinput{amazon}
+\rinput{sharetrace}
+\rinput{hesiod}
+\end{rsection}
+\begin{rsection}{Academic Projects}
+\newcommand{\rinput}[1]{\input{projects/#1}}
+\rinput{connectfm}
+\rinput{icu-future}
+\rinput{truck-rental}
+\end{rsection}
+\begin{rsection}{Extracurriculars}
+\newcommand{\rinput}[1]{\input{extracirriculars/#1}}
+\rinput{discussions}
+\rinput{xc}
+\end{rsection}
+\end{document}
