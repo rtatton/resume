@@ -22,9 +22,9 @@
 	\vspace{#2}
 }
 
-\NewDocumentEnvironment{ritem}{mO{}O{}O{}}{
-	% Top: {title}[location]
-	% Bottom: [short description][timeframe]
+\NewDocumentEnvironment{ritem}{mmmm}{
+	% Top: {title}{location}
+	% Bottom: {short description}{timeframe}
 	\begin{tabularx}{\textwidth}{X r}
 		\textbf{#1} & \textbf{#2} \\[-2pt]
 		\textit{\small#3} & \textit{\small#4}
@@ -35,8 +35,8 @@
 	\end{normalsize}
 }
 
-\NewDocumentEnvironment{ritemize}{mO{}O{}O{}}{
-	\begin{ritem}{#1}[#2][#3][#4]
+\NewDocumentEnvironment{ritemize}{mmmm}{
+	\begin{ritem}{#1}{#2}{#3}{#4}
 	\begin{itemize}[noitemsep]
 }{
 	\end{itemize}
