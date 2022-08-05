@@ -23,7 +23,7 @@
 \newcommand{\urlhref}[2]{\href{#1}{\texttt{#2}}}
 \NewDocumentEnvironment{rsection}{mO{-0.3in}}{
 	\section*{\Large{\sc{#1}}}
-	\vspace{-0.3in}
+	\vspace{-0.25in}
 	\noindent\rule{\textwidth}{0.4pt}
 }{
 	\vspace{#2}
@@ -55,7 +55,7 @@
 \input{headers/header}
 %\input{objectives/objective}
 \input{educations/education}
-\begin{rsection}{Experience}
+\begin{rsection}{Work Experience}
 \newcommand{\rinput}[1]{\input{experiences/#1}}
 \rinput{amazon}
 \rinput{sharetrace}
@@ -67,9 +67,9 @@
 \rinput{connectfm}
 \rinput{icu-future}
 \end{rsection}
-\begin{rsection}{Extracurriculars}
-\newcommand{\rinput}[1]{\input{extracirriculars/#1}}
-\rinput{discussions}
-\rinput{xc}
-\end{rsection}
+%\begin{rsection}{Extracurriculars}
+%\newcommand{\rinput}[1]{\input{extracirriculars/#1}}
+%\rinput{discussions}
+%\rinput{xc}
+%\end{rsection}
 \end{document}
